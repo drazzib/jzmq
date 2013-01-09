@@ -1,3 +1,16 @@
+jzmq (2.1.0-2) UNRELEASED; urgency=low
+
+  * Use debhelper 7 (dh) command:
+    - d/rules: Use dh -with autotools_dev --with autoreconf.
+    - d/control: Build-Depends on autotools-dev and dh-autoreconf.
+    - d/*.install: Remove no needed anymore.
+  * Set myself as Maintainer.
+  * Use default-jdk for build:
+    - d/control: Build-Depends on default-jdk
+    - d/rules: Set JAVA_HOME to /usr/lib/jvm/default-jdk
+
+ -- Damien Raude-Morvan <drazzib@debianStagiaire>  Wed, 09 Jan 2013 13:53:00 +0100
+
 jzmq (2.1.0-1) unstable; urgency=low
 
   * Development release
