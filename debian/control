@@ -3,11 +3,12 @@ Section: libs
 Priority: optional
 Maintainer: Damien Raude-Morvan <drazzib@debian.org>
 Build-Depends: autotools-dev,
-               dh-autoreconf,
                debhelper (>= 9),
                default-jdk,
+               dh-autoreconf,
                libpgm-dev,
-               libzmq-dev [amd64 i386]
+               libzmq-dev [amd64 i386],
+               pkg-config
 Standards-Version: 3.9.3
 Homepage: https://github.com/zeromq/jzmq
 
