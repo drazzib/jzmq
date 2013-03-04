@@ -9,7 +9,7 @@ jzmq (2.1.0-2) UNRELEASED; urgency=low
     - d/control: Build-Depends on default-jdk
     - d/rules: Set JAVA_HOME to /usr/lib/jvm/default-jdk
 
- -- Damien Raude-Morvan <drazzib@debianStagiaire>  Wed, 09 Jan 2013 13:53:00 +0100
+ -- Damien Raude-Morvan <drazzib@debian.org>  Wed, 09 Jan 2013 13:53:00 +0100
 
 jzmq (2.1.0-1) unstable; urgency=low
 

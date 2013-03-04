@@ -9,11 +9,12 @@ Build-Depends: autotools-dev,
                libpgm-dev,
                libzmq-dev [amd64 i386],
                pkg-config
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: https://github.com/zeromq/jzmq
 
 Package: jzmq
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: The Java ZeroMQ bindings
  The 0MQ lightweight messaging kernel is a library which extends the standard
