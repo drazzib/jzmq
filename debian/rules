@@ -3,8 +3,12 @@
 export JAVA_HOME := /usr/lib/jvm/default-jdk
 
 %:
-	dh --buildsystem=autoconf $@ --with autotools_dev --with autoreconf
+	dh $@ --buildsystem=autoconf --with autotools_dev --with autoreconf
 
 override_dh_auto_configure:
 	dh_auto_configure -- --prefix=/usr
 
+# Kill *.la files, and forget no-one:
+override_dh_install:
+	find debian/jzmq -name '*.la' -delete
+	dh_install --fail-missing
