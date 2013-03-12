@@ -1,5 +1,9 @@
 #!/usr/bin/make -f
 
+srcpkg = $(shell LC_ALL=C dpkg-parsechangelog | grep '^Source:' | cut -d ' ' -f 2,2)
+debver = $(shell LC_ALL=C dpkg-parsechangelog | grep '^Version:' | cut -d ' ' -f 2,2 )
+upstreamver = $(shell echo $(debver) | cut -d '-' -f 1,1 )
+
 export JAVA_HOME := /usr/lib/jvm/default-jdk
 
 %:
@@ -12,3 +16,9 @@ override_dh_auto_configure:
 override_dh_install:
 	find debian/jzmq -name '*.la' -delete
 	dh_install --fail-missing
+
+# make orig tarball from repository content
+get-orig-source:
+	# orig tarball, turn directory into something nicer
+	git archive --format=tar --prefix=jzmq-$(upstreamver)/ HEAD | \
+		gzip -9 > jzmq_$(upstreamver).orig.tar.gz
